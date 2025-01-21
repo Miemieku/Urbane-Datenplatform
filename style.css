@@ -1,4 +1,4 @@
-/* 让整个页面无边距，全屏显示 */
+/* 页面全屏设置 */
 html, body {
     margin: 0;
     padding: 0;
@@ -6,16 +6,13 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
-/* 让地图全屏 */
+/* 确保地图容器可见 */
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: 90vh; /* 让地图占据 90% 的屏幕高度 */
 }
 
-/* 让图表容器浮动在地图上 */
+/* 让图表容器浮动 */
 #chart-container {
     position: absolute;
     top: 10px;
