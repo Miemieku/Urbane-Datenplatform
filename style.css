@@ -1,14 +1,12 @@
-
-/* 让页面无边距，地图全屏 */
+/* 让整个页面无边距，全屏显示 */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
 }
 
-/* 让地图全屏显示 */
+/* 让地图全屏 */
 #map {
     position: absolute;
     top: 0;
@@ -17,7 +15,7 @@ html, body {
     right: 0;
 }
 
-/* 让图表容器悬浮在地图上 */
+/* 让图表容器浮动在地图上 */
 #chart-container {
     position: absolute;
     top: 10px;
