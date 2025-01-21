@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Städtische Datenvisualisierung</title>
+    <title>Städtische Datenplattform</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h2>Städtische Datenvisualisierung</h2>
-    <p>Hier wird eine Karte angezeigt.</p>
+    <h2>Städtische Datenplattform</h2>
+    <p>Interaktive Karte mit Daten zu Luftqualität und Verkehr.</p>
+
+    <div id="map"></div>
+    <div id="chart-container">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
