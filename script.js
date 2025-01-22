@@ -11,8 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        L.geoJSON(data, {
+        console.log("Geladene Daten:", data); // 🔹 先输出 JSON 数据到 Konsole
+
+        // 检查数据是否符合 GeoJSON 规范
+        if (!data || !data.features || !Array.isArray(data.features)) {
+            console.error("Fehler: Die Daten sind kein gültiges GeoJSON-Format", data);
+            return;
+        }
+
+        let geoLayer = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
+                console.log("Feature:", feature); // 🔹 输出每个地理对象
                 layer.bindPopup(`
                     <b>${feature.properties.name}</b><br>
                     Luftqualität: ${feature.properties.air_quality}<br>
@@ -20,5 +29,8 @@ fetch('data.json')
                 `);
             }
         }).addTo(map);
+        
+        console.log("GeoJSON Layer:", geoLayer);
     })
     .catch(error => console.error("Fehler beim Laden der Daten:", error));
+
