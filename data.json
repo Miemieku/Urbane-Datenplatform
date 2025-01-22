@@ -12,30 +12,6 @@
         "air_quality": "Gut",
         "traffic": "Mittel"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [6.9603, 50.9375]
-      },
-      "properties": {
-        "name": "Köln",
-        "air_quality": "Mäßig",
-        "traffic": "Hoch"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [7.4653, 51.5136]
-      },
-      "properties": {
-        "name": "Dortmund",
-        "air_quality": "Schlecht",
-        "traffic": "Sehr hoch"
-      }
     }
   ]
 }
