@@ -1,15 +1,41 @@
-// 读取 data.json 并加载到地图
-fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            onEachFeature: function (feature, layer) {
-                layer.bindPopup(`
-                    <b>${feature.properties.name}</b><br>
-                    Luftqualität: ${feature.properties.air_quality}<br>
-                    Verkehrslage: ${feature.properties.traffic}
-                `);
-            }
-        }).addTo(map);
-    })
-    .catch(error => console.error("Fehler beim Laden der Daten:", error));
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.7735, 51.2277]
+      },
+      "properties": {
+        "name": "Düsseldorf",
+        "air_quality": "Gut",
+        "traffic": "Mittel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.9603, 50.9375]
+      },
+      "properties": {
+        "name": "Köln",
+        "air_quality": "Mäßig",
+        "traffic": "Hoch"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.4653, 51.5136]
+      },
+      "properties": {
+        "name": "Dortmund",
+        "air_quality": "Schlecht",
+        "traffic": "Sehr hoch"
+      }
+    }
+  ]
+}
