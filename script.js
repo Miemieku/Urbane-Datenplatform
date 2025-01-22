@@ -7,3 +7,18 @@ document.addEventListener("DOMContentLoaded", function() {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 });
+// 读取 data.json 并加载到地图
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(`
+                    <b>${feature.properties.name}</b><br>
+                    Luftqualität: ${feature.properties.air_quality}<br>
+                    Verkehrslage: ${feature.properties.traffic}
+                `);
+            }
+        }).addTo(map);
+    })
+    .catch(error => console.error("Fehler beim Laden der Daten:", error));
