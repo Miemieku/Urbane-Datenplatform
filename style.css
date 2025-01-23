@@ -7,27 +7,6 @@ body {
     flex-direction: column;
     height: 100vh;
 }
-/* 🔹 手机适配（屏幕宽度小于 768px） */
-@media (max-width: 768px) {
-    body {
-        flex-direction: column; /* 让主内容区域改为上下排列 */
-    }
-
-    #main-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    #sidebar {
-        width: 100%; /* 让左侧列表变成全宽 */
-        height: auto;
-    }
-
-    #map-container {
-        width: 100%; /* 让地图也变成全宽 */
-        height: 50vh; /* 高度设为 50% 视口高度 */
-    }
-}
 
 /* 🔹 顶部导航栏 */
 header {
