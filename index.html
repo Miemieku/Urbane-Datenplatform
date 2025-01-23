@@ -3,19 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Städtische Datenplattform</title>
+    <title>Städtische Datenplattform - Luftqualität</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h2>Städtische Datenplattform</h2>
-    <p>Interaktive Karte mit Daten zu Luftqualität und Verkehr.</p>
+    <!-- 🔹 顶部导航栏 -->
+    <header>
+        <h1>Urbane Daten Plattform</h1>
+        <div id="filter-container">
+            <label for="data-filter">Datenfilter:</label>
+            <select id="data-filter">
+                <option value="all">Alle Daten</option>
+                <option value="good">Luftqualität: Gut</option>
+                <option value="moderate">Luftqualität: Mäßig</option>
+                <option value="bad">Luftqualität: Schlecht</option>
+            </select>
+        </div>
+    </header>
 
-    <div id="map"></div>
-    <div id="chart-container">
-        <canvas id="chart"></canvas>
+    <!-- 主容器，左侧是数据列表，右侧是地图 -->
+    <div id="container">
+        <!-- 左侧列表 -->
+        <div id="sidebar">
+            <h2>Messstationen - Luftqualität</h2>
+            <ul id="station-list"></ul>
+        </div>
+
+        <!-- 右侧地图 -->
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
