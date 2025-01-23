@@ -1,38 +1,91 @@
-/* 基础样式 */
+/* 🔹 全局样式 */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-/* 标题和描述 */
-h2 {
-    margin-top: 20px;
-    color: #333;
+/* 🔹 顶部导航栏 */
+header {
+    background: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    z-index: 1000;
 }
 
-p {
-    color: #666;
-    font-size: 1.2em;
+/* 🔹 标题样式 */
+header h1 {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 20px;
 }
 
-/* 地图容器 */
+/* 🔹 过滤器 */
+#filter-container {
+    margin-right: 20px;
+}
+
+#data-filter {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* 🔹 主内容区域 */
+#main-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 50px); /* 减去导航栏高度 */
+    margin-top: 50px; /* 避免内容被导航栏遮挡 */
+}
+
+/* 🔹 左侧列表 */
+#sidebar {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+}
+
+/* 🔹 右侧地图 */
+#map-container {
+    width: 70%;
+    height: 100vh;
+}
+
+/* 🔹 地图本身 */
 #map {
-    height: 500px;
-    width: 80%;
-    margin: 20px auto;
-    border: 2px solid #ddd;
+    width: 100%;
+    height: 100%;
 }
 
-/* 图表容器 */
-#chart-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
+/* 🔹 数据列表样式 */
+#station-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#station-list li {
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 5px 0;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+#station-list li:hover {
+    background: #ddd;
 }
