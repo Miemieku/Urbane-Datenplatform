@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">   <!-- 确保页面可以正确显示特殊字符（如 ä, ö, ü） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Urbane Daten Plattform - Luftqualität</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
@@ -12,16 +12,8 @@
 
     <!-- 🔹 顶部导航栏 -->
     <header>
-        <h1>Urbane Daten Plattform</h1>
-        <div id="filter-container">
-            <label for="data-filter">Datenfilter:</label>
-            <select id="data-filter">
-                <option value="all">Alle Daten</option>
-                <option value="good">Luftqualität: Gut</option>
-                <option value="moderate">Luftqualität: Mäßig</option>
-                <option value="bad">Luftqualität: Schlecht</option>
-            </select>
-        </div>
+        <button id="menu-toggle">☰ Menü</button>
+        <h1 id="site-title">Urbane Daten Plattform</h1>
     </header>
 
     <!-- 🔹 主容器 -->
@@ -29,6 +21,7 @@
         <!-- 🔹 侧边栏容器 -->
         <aside id="sidebar-container">
             <div id="sidebar">
+                <button id="close-sidebar">×</button>
                 <h2>Messstationen - Luftqualität</h2>
                 <ul id="station-list"></ul>
             </div>
