@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Städtische Datenplattform - Luftqualität</title>
+    <title>Urbane Daten Plattform - Luftqualität</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
+
     <!-- 🔹 顶部导航栏 -->
     <header>
         <h1>Urbane Daten Plattform</h1>
@@ -23,18 +24,18 @@
         </div>
     </header>
 
-    <!-- 主容器，左侧是数据列表，右侧是地图 -->
-    <div id="container">
-        <!-- 左侧列表 -->
-        <div id="sidebar">
+    <!-- 🔹 主内容容器 -->
+    <div id="main-container">
+        <!-- 🔹 左侧：数据列表 -->
+        <aside id="sidebar">
             <h2>Messstationen - Luftqualität</h2>
             <ul id="station-list"></ul>
-        </div>
+        </aside>
 
-        <!-- 右侧地图 -->
-        <div id="map-container">
+        <!-- 🔹 右侧：地图区域 -->
+        <section id="map-container">
             <div id="map"></div>
-        </div>
+        </section>
     </div>
 
     <script src="script.js"></script>
