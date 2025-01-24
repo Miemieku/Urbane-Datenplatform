@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
 map = L.map('map', {
     center: [51.2277, 6.7735],
     zoom: 12,
-    zoomControl: true // ✅ 确保放大缩小按钮开启
+    zoomControl: false // ✅ 确保放大缩小按钮开启
 });
+
+L.control.zoom({
+    position: 'bottomright'
+}).addTo(map);
 
     // 3️⃣ 加载地图瓦片（OpenStreetMap）
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
