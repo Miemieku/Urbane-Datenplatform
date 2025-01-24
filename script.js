@@ -22,13 +22,13 @@ L.control.zoom({
     loadGeoJSON();
 
     // 🔹 新增：侧边栏控制逻辑
+    var sidebar = document.getElementById("sidebar");
     var menuToggle = document.getElementById("menu-toggle");
-    var sidebar = document.getElementById("sidebar-container");
-
-    // 🔹 点击菜单按钮 (☰) 时，打开侧边栏
+    
     menuToggle.addEventListener("click", function() {
-        sidebar.classList.add("active");
+        sidebar.classList.toggle("active"); // ✅ 如果有 `active`，移除；如果没有 `active`，添加
     });
+    
 });
 
 function loadGeoJSON() {
