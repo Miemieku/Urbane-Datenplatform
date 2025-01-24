@@ -2,16 +2,17 @@
 var map;
 
 document.addEventListener("DOMContentLoaded", function() {
-    // 2️⃣ 当网页加载完成后，执行这个函数
-map = L.map('map', {
-    center: [51.2277, 6.7735],
-    zoom: 12,
-    zoomControl: false // 禁用默认控件
-});
-    //  添加放大缩小控件
-L.control.zoom({
-    position: 'bottomright'
-}).addTo(map);
+    // 1️⃣ 初始化地图
+    map = L.map('map', {
+        center: [51.2277, 6.7735],
+        zoom: 12,
+        zoomControl: false // 禁用默认控件
+    });
+
+    // 2️⃣ 添加放大缩小控件
+    L.control.zoom({
+        position: 'bottomright'
+    }).addTo(map);
 
     // 3️⃣ 加载地图瓦片（OpenStreetMap）
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -21,15 +22,15 @@ L.control.zoom({
     // 4️⃣ 读取 `data.json` 并加载数据
     loadGeoJSON();
 
-    // 🔹 新增：侧边栏控制逻辑
-    var sidebar = document.getElementById("sidebar");
+    // 🔹 侧边栏控制逻辑
+    var sidebar = document.getElementById("sidebar-container"); // ✅ 选取 `#sidebar-container`
     var menuToggle = document.getElementById("menu-toggle");
     
     menuToggle.addEventListener("click", function() {
-        sidebar.classList.toggle("active"); // ✅ 如果有 `active`，移除；如果没有 `active`，添加
+        sidebar.classList.toggle("active"); // ✅ 让 `active` 类正确作用在 `#sidebar-container`
     });
-    
 });
+
 
 function loadGeoJSON() {
     fetch('data.json')  // 5️⃣ 发送请求，获取 `data.json`
