@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
 map = L.map('map', {
     center: [51.2277, 6.7735],
     zoom: 12,
-    zoomControl: false // ✅ 确保放大缩小按钮开启
+    zoomControl: false // 禁用默认控件
 });
-
+    //  添加放大缩小控件
 L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
@@ -23,24 +23,11 @@ L.control.zoom({
 
     // 🔹 新增：侧边栏控制逻辑
     var menuToggle = document.getElementById("menu-toggle");
-    var closeSidebar = document.getElementById("close-sidebar");
     var sidebar = document.getElementById("sidebar-container");
 
     // 🔹 点击菜单按钮 (☰) 时，打开侧边栏
     menuToggle.addEventListener("click", function() {
         sidebar.classList.add("active");
-    });
-
-    // 🔹 点击关闭按钮 (×) 时，隐藏侧边栏
-    closeSidebar.addEventListener("click", function() {
-        sidebar.classList.remove("active");
-    });
-
-    // 🔹 点击页面其他区域时，自动关闭侧边栏
-    document.addEventListener("click", function(event) {
-        if (!sidebar.contains(event.target) && event.target !== menuToggle) {
-            sidebar.classList.remove("active");
-        }
     });
 });
 
