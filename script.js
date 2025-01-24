@@ -12,6 +12,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 4️⃣ 读取 `data.json` 并加载数据
     loadGeoJSON();
+
+    // 🔹 新增：侧边栏控制逻辑
+    var menuToggle = document.getElementById("menu-toggle");
+    var closeSidebar = document.getElementById("close-sidebar");
+    var sidebar = document.getElementById("sidebar-container");
+
+    // 🔹 点击菜单按钮 (☰) 时，打开侧边栏
+    menuToggle.addEventListener("click", function() {
+        sidebar.classList.add("active");
+    });
+
+    // 🔹 点击关闭按钮 (×) 时，隐藏侧边栏
+    closeSidebar.addEventListener("click", function() {
+        sidebar.classList.remove("active");
+    });
+
+    // 🔹 点击页面其他区域时，自动关闭侧边栏
+    document.addEventListener("click", function(event) {
+        if (!sidebar.contains(event.target) && event.target !== menuToggle) {
+            sidebar.classList.remove("active");
+        }
+    });
 });
 
 function loadGeoJSON() {
