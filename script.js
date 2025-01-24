@@ -3,7 +3,11 @@ var map;
 
 document.addEventListener("DOMContentLoaded", function() {
     // 2️⃣ 当网页加载完成后，执行这个函数
-    map = L.map('map').setView([51.2277, 6.7735], 12);
+map = L.map('map', {
+    center: [51.2277, 6.7735],
+    zoom: 12,
+    zoomControl: true // ✅ 确保放大缩小按钮开启
+});
 
     // 3️⃣ 加载地图瓦片（OpenStreetMap）
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
